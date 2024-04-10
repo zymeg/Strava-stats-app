@@ -64,7 +64,7 @@ export const getAccessToken = async () => {
       setLocalTokenExpiry(responseData.expires_at)
       window.location =
         import.meta.env.NODE_ENV === 'production'
-          ? 'https://www.kudos-web.app'
+          ? 'https://rogowskie-straty.netlify.app'
           : `http://localhost:5173`
       return responseData.access_token
     } catch (error) {
@@ -82,7 +82,7 @@ export const logout = () => {
   removeLocalTokenExpiry()
   window.location =
     import.meta.env.NODE_ENV === 'production'
-      ? 'https://www.kudos-web.app'
+      ? 'https://rogowskie-straty.netlify.app'
       : `http://localhost:5173`
 }
 

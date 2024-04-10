@@ -14,7 +14,7 @@ export default {
       const { VITE_APP_CLIENT_ID } = import.meta.env
       const redirectUrl =
         import.meta.env.NODE_ENV === 'production'
-          ? 'https://www.kudos-web.app'
+          ? 'https://rogowskie-straty.netlify.app'
           : `http://localhost:5173/UserProfile`
       window.location = `http://www.strava.com/oauth/authorize?client_id=${VITE_APP_CLIENT_ID}&response_type=code&redirect_uri=${redirectUrl}/exchange_token&approval_prompt=force&scope=read,profile:read_all,activity:read,activity:read_all`
     }
