@@ -16,7 +16,7 @@ export default {
   },
   methods: {
     loggedIn() {
-      return this.$store.state.accessToken
+      return this.$store.state.accessToken !== null && this.$store.state.accessToken !== ''
     }
   },
   mounted() {
@@ -26,16 +26,20 @@ export default {
     ) {
       this.loading = true
     }
+
     getAccessToken().then((res) => {
       this.$store.dispatch('storeToken', res)
+      if (res) {
+        this.loading = false // zakończ ładowanie, gdy token zostanie pobrany
+      }
     })
   }
 }
 </script>
 
 <template>
-  <div v-if="loading"></div>
-  <LoginPage v-else-if="!loggedIn()" />
+  <!-- <div v-if="loading"></div> -->
+  <LoginPage v-if="!loggedIn()" />
   <PageWrapper v-else />
 </template>
 
