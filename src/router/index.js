@@ -7,7 +7,7 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.VITE_ENV_URL),
   routes: [
     {
-      path: '*',
+      path: '/*',
       name: 'Main',
       componen: App
     },
