@@ -11,12 +11,13 @@ export default {
   name: 'LoginPage',
   methods: {
     login() {
-      const { VITE_APP_CLIENT_ID } = import.meta.env
-      const redirectUrl =
-        import.meta.env.VITE_USER_NODE_ENV === 'production'
-          ? 'https://rogowskie-straty.netlify.app'
-          : `http://localhost:5173/UserProfile`
-      window.location = `http://www.strava.com/oauth/authorize?client_id=${VITE_APP_CLIENT_ID}&response_type=code&redirect_uri=${redirectUrl}/exchange_token&approval_prompt=force&scope=read,profile:read_all,activity:read,activity:read_all`
+      // const { VITE_APP_CLIENT_ID } = import.meta.env
+      // const redirectUrl =
+      //   import.meta.env.VITE_USER_NODE_ENV === 'production'
+      //     ? 'https://rogowskie-straty.netlify.app'
+      //     : `http://localhost:5173/UserProfile`
+      // window.location = `http://www.strava.com/oauth/authorize?client_id=${VITE_APP_CLIENT_ID}&response_type=code&redirect_uri=${redirectUrl}/exchange_token&approval_prompt=force&scope=read,profile:read_all,activity:read,activity:read_all`
+      console.log(import.meta.env)
     }
   }
 }
