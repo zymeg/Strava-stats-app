@@ -63,7 +63,7 @@ export const getAccessToken = async () => {
       setLocalRefreshToken(responseData.refresh_token)
       setLocalTokenExpiry(responseData.expires_at)
       window.location =
-        import.meta.env.NODE_ENV === 'production'
+        import.meta.env.VITE_USER_NODE_ENV === 'production'
           ? 'https://rogowskie-straty.netlify.app'
           : `http://localhost:5173`
       return responseData.access_token
@@ -81,7 +81,7 @@ export const logout = () => {
   removeLocalRefreshToken()
   removeLocalTokenExpiry()
   window.location =
-    import.meta.env.NODE_ENV === 'production'
+    import.meta.env.VITE_USER_NODE_ENV === 'production'
       ? 'https://rogowskie-straty.netlify.app'
       : `http://localhost:5173`
 }
