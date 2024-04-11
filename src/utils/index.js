@@ -11,11 +11,18 @@ export const getCurrentTime = () => {
 }
 
 export const getRewardValue = (distance, type) => {
-  if (type === 'Ride') return Math.round((distance * 26) / 10000)
-  if (type === 'Run') return Math.round((distance * 72) / 10000)
-  if (type === 'Walk') return Math.round((distance * 56) / 10000)
-  if (type === 'Swim') return Math.round((distance * 120) / 10000)
-  if (type === 'Hike') return Math.round((distance * 70) / 10000)
+  switch (type) {
+    case 'Ride':
+      return Math.round((distance * 26) / 10000)
+    case 'Run':
+      return Math.round((distance * 72) / 10000)
+    case 'Walk':
+      return Math.round((distance * 56) / 10000)
+    case 'Swim':
+      return Math.round((distance * 120) / 10000)
+    case 'Hike':
+      return Math.round((distance * 70) / 10000)
+  }
 }
 
 export const calculateMonths = (month) => {

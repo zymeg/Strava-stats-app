@@ -34,3 +34,46 @@ Aplikacja StravaStats została zbudowana przy użyciu następujących technologi
 - SCSS: Do stylizacji interfejsu użytkownika.
 - Axios - Do wykonywania requestów do Strava API
 - FontAwesome6 - Do wyświetlania fancy ikon
+
+## Uruchomienie aplikacji
+
+Aby uruchomić aplikację StravaStats na swoim lokalnym środowisku, wykonaj następujące kroki:
+
+1. Sklonuj repozytorium z aplikacją na swoje urządzenie.
+
+```bash
+git clone https://github.com/twoje-konto/strava-stats.git
+```
+
+2. Przejdź do katalogu projektu.
+
+```bash
+cd strava-stats
+```
+
+3. Zainstaluj wszystkie zależności przy użyciu menedżera pakietów npm.
+
+```bash
+npm install
+```
+
+4. Skonfiguruj plik .env
+
+```javascript
+VITE_APP_CLIENT_ID = YOUR_APP_CLIENT_ID
+VITE_APP_CLIENT_SECRET = YOUR_APP_CLIENT_SECRET
+
+NODE_ENV = 'development' // development/production
+VITE_ENV_URL = '' // Leave empty
+```
+
+5. Uruchom aplikację.
+
+```bash
+npm run serve
+```
+
+Aplikacja będzie dostępna pod wskazanym przez konsolę adresem.
+
+##Autorzy
+Szymon Jaskuła - Developer front-end - szymonjaskula122@gmail.com
