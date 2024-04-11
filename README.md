@@ -75,5 +75,6 @@ npm run serve
 
 Aplikacja będzie dostępna pod wskazanym przez konsolę adresem.
 
-##Autorzy
+## Autorzy
+
 Szymon Jaskuła - Developer front-end - szymonjaskula122@gmail.com
