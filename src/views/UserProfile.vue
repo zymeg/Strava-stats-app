@@ -49,7 +49,7 @@
             @update:model-value="handleDateChange"
             dark
             :max-date="new Date()"
-            :clearable="true"
+            :clearable="false"
           ></VueDatePicker>
         </div>
         <h2>Lista aktywności:</h2>
