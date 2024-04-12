@@ -64,4 +64,22 @@ section {
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  section {
+    width: 95%;
+    padding: 0.5rem;
+
+    & > h1 {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: 0.1rem;
+    }
+
+    #strava-login-bar {
+      width: 100%;
+      font-size: 1.4rem;
+    }
+  }
+}
 </style>

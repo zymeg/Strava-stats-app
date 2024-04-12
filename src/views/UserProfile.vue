@@ -308,4 +308,77 @@ img {
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .profile-wrapper {
+    width: 95%;
+  }
+  .datepicker-wrapper {
+    width: 100%;
+  }
+  .profile-header {
+    flex-direction: column;
+    width: 100%;
+
+    & > .left-panel {
+      max-width: 100%;
+      width: 100%;
+      border-bottom: solid 2px $lighten-background-color;
+      text-align: center;
+      align-content: center;
+
+      h1 {
+        font-size: 1.4rem;
+        font-weight: 500;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      img {
+        margin: 1rem auto 0;
+      }
+      & > .profile-info {
+        & > div {
+          text-align: center;
+          width: 50%;
+          font-weight: 500;
+          font-size: 1.2rem;
+
+          & > p {
+            font-weight: 300;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+
+    & > .right-panel {
+      width: 100%;
+
+      & > .points-total,
+      & > .points-selected-month {
+        width: 100%;
+        text-align: right;
+        margin: 0.5rem 0;
+
+        & > .points {
+          font-size: 1.5rem;
+          font-weight: 300;
+          letter-spacing: 0.1rem;
+        }
+
+        & > .month-points {
+          font-size: 1.3rem;
+          font-weight: 100;
+        }
+
+        & > svg {
+          height: 2rem;
+          margin: 0 0.5rem;
+        }
+      }
+    }
+  }
+}
 </style>

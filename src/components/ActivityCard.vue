@@ -156,4 +156,43 @@ export default {
     text-decoration: none;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .activity-card-wrapper {
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    margin: 0.7rem auto;
+  }
+  .card-top {
+    & > p {
+      font-size: 0.7rem;
+    }
+  }
+  .activity-name {
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+  .card-bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: left;
+    margin: 0.2rem auto;
+    & > p {
+      font-weight: 300;
+      font-size: 0.8rem;
+      line-height: 1rem;
+      width: 100%;
+      margin: 0.2rem;
+
+      & > .activity-icon {
+        height: 1rem;
+        margin: 0;
+      }
+    }
+
+    & > a {
+      font-size: 0.7rem;
+    }
+  }
+}
 </style>
