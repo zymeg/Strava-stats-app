@@ -12,6 +12,11 @@ export default {
   name: 'PageWrapper',
   components: {
     NavBar
+  },
+  beforeCreate() {
+    if (window.location.pathname === '/') {
+      window.location.pathname = '/UserProfile'
+    }
   }
 }
 </script>
