@@ -132,6 +132,7 @@ header {
 @media only screen and (max-width: 600px) {
   header {
     padding: 0 0.2rem;
+    z-index: 999;
 
     & > .logo {
       & > .logo-image {
@@ -163,6 +164,12 @@ header {
         min-height: 3vh;
         font-size: 0.9rem;
         letter-spacing: 0.1rem;
+
+        &:hover {
+          background: $main-strava-color;
+          color: $main-text-color;
+          font-size: 0.9rem;
+        }
 
         & > .router,
         & > .logout {
