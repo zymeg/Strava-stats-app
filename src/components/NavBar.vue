@@ -113,6 +113,10 @@ header {
       letter-spacing: 0.1rem;
       transition: 0.5s;
 
+      &:first-child {
+        display: none !important;
+      }
+
       &:hover {
         background: $darken-strava-color;
         color: $lighten-text-color;
@@ -165,10 +169,6 @@ header {
         min-height: 3vh;
         font-size: 0.9rem;
         letter-spacing: 0.1rem;
-
-        &:first-child {
-          display: none;
-        }
       }
     }
   }
