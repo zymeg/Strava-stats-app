@@ -133,6 +133,7 @@ header {
   header {
     padding: 0 0.2rem;
     z-index: 999;
+    min-height: 4rem;
 
     & > .logo {
       & > .logo-image {
@@ -165,18 +166,8 @@ header {
         font-size: 0.9rem;
         letter-spacing: 0.1rem;
 
-        &:hover {
-          background: $main-strava-color;
-          color: $main-text-color;
-          font-size: 0.9rem;
-        }
-
-        & > .router,
-        & > .logout {
-          display: inline-block;
-          text-align: center;
-          width: 100%;
-          height: 100%;
+        &:first-child {
+          display: none;
         }
       }
     }
