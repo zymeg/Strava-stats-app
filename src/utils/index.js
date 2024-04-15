@@ -19,7 +19,7 @@ export const getRewardValue = (distance, type) => {
     case 'Walk':
       return Math.round((distance * 56) / 10000)
     case 'Swim':
-      return Math.round((distance * 120) / 10000)
+      return Math.round((distance * 250) / 10000)
     case 'Hike':
       return Math.round((distance * 70) / 10000)
   }
