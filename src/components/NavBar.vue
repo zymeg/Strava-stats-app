@@ -43,6 +43,7 @@ header {
   background: $main-strava-color;
   display: grid;
   grid-template-columns: 2fr, 10fr;
+  z-index: 999;
 
   & > .logo {
     grid-column-start: 0;
@@ -132,7 +133,6 @@ header {
 @media only screen and (max-width: 600px) {
   header {
     padding: 0 0.2rem;
-    z-index: 999;
     min-height: 4rem;
 
     & > .logo {
