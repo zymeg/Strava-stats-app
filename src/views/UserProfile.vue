@@ -98,14 +98,26 @@ export default {
   computed: {
     // Oblicz sumę punktów dla aktywności z danego miesiąca
     pointsTotalMonth() {
+      let pointsToAdd = 0
       return this.filteredActivities.reduce((total, activity) => {
-        return total + getRewardValue(activity.distance, activity.type)
+        pointsToAdd = getRewardValue(activity.distance, activity.type)
+        if (!isNaN(pointsToAdd)) {
+          return total + pointsToAdd
+        } else {
+          return total + 0
+        }
       }, 0)
     },
     // Oblicz sumę punktów dla wszystkich aktywności
     pointsTotalAll() {
+      let pointsToAdd = 0
       return this.allActivities.reduce((total, activity) => {
-        return total + getRewardValue(activity.distance, activity.type)
+        pointsToAdd = getRewardValue(activity.distance, activity.type)
+        if (!isNaN(pointsToAdd)) {
+          return total + pointsToAdd
+        } else {
+          return total + 0
+        }
       }, 0)
     }
   },
