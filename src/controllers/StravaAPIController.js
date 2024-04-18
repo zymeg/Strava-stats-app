@@ -134,3 +134,39 @@ export const getUserStats = async (id) => {
     console.log(error)
   }
 }
+
+export const getUserClubs = async () => {
+  try {
+    const userClubs = await axios.get(`https://www.strava.com/api/v3/athlete/clubs`)
+    return userClubs.data
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const getClubInfo = async (id) => {
+  try {
+    const clubData = await axios.get(`https://www.strava.com/api/v3/clubs/${id}`)
+    return clubData.data
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const getClubMembers = async (id) => {
+  try {
+    const clubMembers = await axios.get(`https://www.strava.com/api/v3/clubs/${id}/members`)
+    return clubMembers.data
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const getClubActivities = async (id) => {
+  try {
+    const clubActivities = await axios.get(`https://www.strava.com/api/v3/clubs/${id}/activities`)
+    return clubActivities.data
+  } catch (error) {
+    console.log(error)
+  }
+}

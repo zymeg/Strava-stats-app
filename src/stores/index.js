@@ -8,7 +8,11 @@ export const store = createStore({
       recentActivities: null,
       activities: null,
       allActivities: null,
-      userStats: null
+      userStats: null,
+      userClubs: null,
+      clubData: null,
+      clubMembers: null,
+      clubActivities: null
     }
   },
   mutations: {
@@ -29,6 +33,18 @@ export const store = createStore({
     },
     storeAllActivities(state, allActivities) {
       state.allActivities = allActivities
+    },
+    storeAllClubs(state, allClubs) {
+      state.allClubs = allClubs
+    },
+    storeClubData(state, clubData) {
+      state.clubData = clubData
+    },
+    storeClubMembers(state, clubMembers) {
+      state.clubMembers = clubMembers
+    },
+    storeClubActivities(state, clubActivities) {
+      state.clubActivities = clubActivities
     }
   },
   actions: {
@@ -52,6 +68,18 @@ export const store = createStore({
     },
     storeAllActivities({ commit }, allActivities) {
       commit('storeAllActivities', allActivities)
+    },
+    storeAllClubs({ commit }, allClubs) {
+      commit('storeAllClubs', allClubs)
+    },
+    storeClubData({ commit }, clubData) {
+      commit('storeClubData', clubData)
+    },
+    storeClubMembers({ commit }, clubMembers) {
+      commit('storeClubMembers', clubMembers)
+    },
+    storeClubActivities({ commit }, clubActivities) {
+      commit('storeClubActivities', clubActivities)
     }
   }
 })

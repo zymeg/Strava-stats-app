@@ -3,6 +3,8 @@ import UserProfile from '../views/UserProfile.vue'
 import App from '../App.vue'
 import OutOfLimit from '../views/OutOfLimit.vue'
 import Loader from '@/components/Loader.vue'
+import ClubsList from '../views/ClubsList.vue'
+import ClubInfo from '../views/ClubInfo.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.VITE_ENV_URL),
@@ -26,6 +28,16 @@ const router = createRouter({
       path: '/exchange_token*',
       name: 'exchange_token',
       component: Loader
+    },
+    {
+      path: '/ClubsList',
+      name: 'ClubList',
+      component: ClubsList
+    },
+    {
+      path: '/Club/:id',
+      name: 'ClubInfo',
+      component: ClubInfo
     }
   ]
 })

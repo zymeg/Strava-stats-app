@@ -7,7 +7,7 @@
     <div class="app-name"><h1>Rogowskie straty</h1></div>
     <ul class="nav-items">
       <RouterLink to="/UserProfile" class="nav-item"><li class="router">Użytkownik</li></RouterLink>
-      <!-- <RouterLink to="/Clubs" class="nav-item"><li class="router">Kluby</li></RouterLink> -->
+      <RouterLink to="/ClubsList" class="nav-item"><li class="router">Kluby</li></RouterLink>
       <li class="nav-item logout" @click="logout()">Wyloguj</li>
     </ul>
   </header>
@@ -112,10 +112,6 @@ header {
       font-size: 1.1rem;
       letter-spacing: 0.1rem;
       transition: 0.5s;
-
-      &:first-child {
-        display: none !important;
-      }
 
       &:hover {
         background: $darken-strava-color;
