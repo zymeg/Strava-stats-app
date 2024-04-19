@@ -19,7 +19,7 @@
         </div>
         <div class="right-panel">
           <div class="points-total">
-            <span class="points"> {{ pointsTotalAll }} </span
+            <span class="points"> {{ pointsTotalAllValue }} </span
             ><span class="month-points">wszystkich</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="activity-icon">
               <path
@@ -28,7 +28,7 @@
             </svg>
           </div>
           <div class="points-selected-month">
-            <span class="points"> {{ pointsTotalMonth }} </span>
+            <span class="points"> {{ pointsTotalMonthValue }} </span>
             <span class="month-points">
               {{ calculateMonthsExt(selectedDate.month) }} {{ selectedDate.year }}</span
             >
@@ -87,8 +87,8 @@ export default {
       user: null,
       allActivities: [], // Przechowuje wszystkie aktywności
       filteredActivities: [], // Przechowuje przefiltrowane aktywności
-      pointsTotalMonth: 0,
-      pointsTotalAll: 0,
+      pointsTotalMonthValue: 0,
+      pointsTotalAllValue: 0,
       selectedDate: {
         month: new Date().getMonth(),
         year: new Date().getFullYear()

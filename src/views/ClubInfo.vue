@@ -28,7 +28,9 @@
     </div>
     <div v-if="memberVisible === 1" class="member-list">
       <ul>
-        <li v-for="member in clubMembers">{{ `${member.firstname} ${member.lastname}` }}</li>
+        <li v-for="member in clubMembers" :key="member">
+          {{ `${member.firstname} ${member.lastname}` }}
+        </li>
       </ul>
     </div>
   </section>
