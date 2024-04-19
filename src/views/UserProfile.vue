@@ -147,12 +147,26 @@ export default {
         )
       })
     },
-    // Pobierz aktywności użytkownika
-    fetchActivities() {
-      getActivities()
+    calculateMonthsExt(month) {
+      return calculateMonths(month)
+    }
+  },
+  async mounted() {
+    if (!this.$store.state.user) {
+      await getUserInfo()
+        .then((res) => {
+          this.user = res
+          this.$store.dispatch('storeUser', res)
+        })
+        .catch((error) => console.log(error))
+    } else {
+      this.user = this.$store.state.user
+    }
+    if (!this.$store.state.Activities) {
+      await getActivities()
         .then((res) => {
           this.allActivities = res
-          // Na początku ustaw przefiltrowane aktywności na te z aktualnie wybranego miesiąca
+          this.$store.dispatch('storeActivities', res)
           this.filteredActivities = this.allActivities.filter((activity) => {
             const activityDate = new Date(activity.start_date_local)
             return (
@@ -161,60 +175,15 @@ export default {
             )
           })
         })
-        .catch((error) => {
-          console.log(error)
-          this.loading = false
-        })
-
-      this.loading = false
-    },
-    // Pobierz informacje o użytkowniku
-    fetchUserInfo() {
-      getUserInfo()
-        .then((res) => {
-          this.user = res
-          this.loading = false
-        })
-        .catch((error) => {
-          console.log(error)
-          this.loading = false
-        })
-    },
-    calculateMonthsExt(month) {
-      return calculateMonths(month)
-    }
-  },
-  mounted() {
-    if (!this.$store.state.user) {
-      getUserInfo()
-        .then((res) => {
-          this.user = res
-          this.$store.dispatch('storeUser', res)
-        })
-        .catch((error) => console.log(error))
-    } else {
-      this.user = this.$store.state.user
-      // this.loading = false
-    }
-    if (!this.$store.state.Activities) {
-      getActivities()
-        .then((res) => {
-          this.allActivities = res
-          this.$store.dispatch('storeActivities', res)
-          this.allActivities.map((e) => {
-            this.pointsTotal += getRewardValue(e.distance, e.type)
-            console.log(this.pointsTotal)
-          })
-          // this.loading = false
-        })
         .catch((error) => console.log(error))
     } else {
       this.allActivities = this.$store.state.Activities
-      // this.loading = false
     }
 
-    this.fetchUserInfo()
-    this.fetchActivities()
+    this.loading = false
+
+    // this.fetchUserInfo()
+    // this.fetchActivities()
   }
 }
 </script>

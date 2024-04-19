@@ -1,5 +1,6 @@
 <template>
-  <section>
+  <Loader v-if="loading === true" />
+  <section v-else>
     <div class="club-info">
       <div v-if="clubData.profile != 'avatar/club/large.png'" class="photo">
         <img :src="clubData.profile" />
@@ -38,11 +39,13 @@ import { useRoute } from 'vue-router'
 import { getClubInfo, getClubMembers, getClubActivities } from '@/controllers/StravaAPIController'
 
 import ActivityCard from '@/components/ActivityCard.vue'
+import Loader from '@/components/Loader.vue'
 
 export default {
   name: 'ClubInfo',
   components: {
-    ActivityCard
+    ActivityCard,
+    Loader
   },
   data: function () {
     return {
@@ -66,32 +69,29 @@ export default {
       }
     }
   },
-  mounted() {
+  async mounted() {
     const route = useRoute()
     this.clubID = route.params.id
 
-    getClubInfo(this.clubID)
+    await getClubInfo(this.clubID)
       .then((res) => {
         this.clubData = res
-        this.loading = false
       })
       .catch((error) => console.log(error))
 
-    this.loading = true
-    getClubMembers(this.clubID)
+    await getClubMembers(this.clubID)
       .then((res) => {
         this.clubMembers = res
-        this.loading = false
       })
       .catch((error) => console.log(error))
 
-    this.loading = true
-    getClubActivities(this.clubID)
+    await getClubActivities(this.clubID)
       .then((res) => {
         this.clubActivities = res
-        this.loading = false
       })
       .catch((error) => console.log(error))
+
+    this.loading = false
   }
 }
 </script>
