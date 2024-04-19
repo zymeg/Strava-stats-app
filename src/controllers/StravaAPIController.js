@@ -104,20 +104,12 @@ export const getActivities = async () => {
   }
 }
 
-export const getAllActivities = async (time) => {
+export const getAllActivities = async () => {
   let allActivities = []
-  let page = 1
   const fetchMaxActivities = async () => {
-    // Get all activities 200 at a time using pagination
     try {
-      const activities = await getActivities(page, time, 200)
+      const activities = await getActivities()
       allActivities = [...allActivities, ...activities]
-      if (activities.length < 200) {
-        return
-      } else {
-        page++
-        fetchMaxActivities()
-      }
     } catch (e) {
       console.log(e)
     }

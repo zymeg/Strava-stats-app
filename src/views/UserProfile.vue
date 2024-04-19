@@ -3,7 +3,7 @@
     <div v-if="!loading" class="profile">
       <div class="profile-header">
         <div class="left-panel">
-          <img :src="user.profile" />
+          <img :src="user.profile" alt="User profile photo" />
           <h1>{{ user.firstname + ' ' + user.lastname }}</h1>
           <p>{{ user.bio }}</p>
           <div class="profile-info">

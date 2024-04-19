@@ -1,7 +1,7 @@
 <template>
   <div class="club-card" @click="routeToClub()">
     <div v-if="club.profile_medium != 'avatar/club/medium.png'" class="photo">
-      <img :src="club.profile_medium" />
+      <img :src="club.profile_medium" alt="Club profile image" />
     </div>
     <div class="club-data">
       <h2 class="club-name">
@@ -37,7 +37,6 @@ export default {
   },
   methods: {
     routeToClub() {
-      console.log('routed')
       router.push({ name: 'ClubInfo', params: { id: this.club.id } })
     }
   }

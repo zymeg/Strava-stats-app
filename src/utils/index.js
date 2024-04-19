@@ -22,6 +22,15 @@ export const getRewardValue = (distance, type) => {
       return Math.round((distance * 250) / 10000)
     case 'Hike':
       return Math.round((distance * 70) / 10000)
+    case 'InlineSkate':
+      return Math.round((distance * 75) / 10000)
+  }
+}
+
+export const getRewardByTimeValue = (time, type) => {
+  switch (type) {
+    case 'Workout':
+      return Math.round((time * 150) / 10000)
   }
 }
 

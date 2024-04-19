@@ -38,9 +38,6 @@ export default {
 </script>
 
 <template>
-  <!-- <div v-if="loading"></div> -->
   <LoginPage v-if="!loggedIn()" />
   <PageWrapper v-else />
 </template>
-
-<style scoped></style>

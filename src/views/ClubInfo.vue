@@ -3,7 +3,7 @@
   <section v-else>
     <div class="club-info">
       <div v-if="clubData.profile != 'avatar/club/large.png'" class="photo">
-        <img :src="clubData.profile" />
+        <img :src="clubData.profile" alt="Club profile image" />
       </div>
       <div class="club-more-info">
         <h1 class="club-name">
@@ -136,7 +136,6 @@ section {
 
   & > .club-page-wrapper {
     width: 100%;
-    // height: 7rem;
 
     & > ul {
       display: flex;
