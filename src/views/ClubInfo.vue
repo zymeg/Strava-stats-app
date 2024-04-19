@@ -3,7 +3,7 @@
   <section v-else>
     <div class="club-info">
       <div v-if="clubData.profile != 'avatar/club/large.png'" class="photo">
-        <img :src="clubData.profile" alt="Club profile image" />
+        <img :src="clubData.profile" alt="Club profile" />
       </div>
       <div class="club-more-info">
         <h1 class="club-name">

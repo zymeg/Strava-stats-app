@@ -1,7 +1,7 @@
 <template>
   <div class="club-card" @click="routeToClub()">
     <div v-if="club.profile_medium != 'avatar/club/medium.png'" class="photo">
-      <img :src="club.profile_medium" alt="Club profile image" />
+      <img :src="club.profile_medium" alt="Club profile" />
     </div>
     <div class="club-data">
       <h2 class="club-name">

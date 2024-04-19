@@ -28,10 +28,7 @@ export const getRewardValue = (distance, type) => {
 }
 
 export const getRewardByTimeValue = (time, type) => {
-  switch (type) {
-    case 'Workout':
-      return Math.round((time * 150) / 10000)
-  }
+  if (type === 'Workout') return Math.round((time * 150) / 10000)
 }
 
 export const calculateMonths = (month) => {
