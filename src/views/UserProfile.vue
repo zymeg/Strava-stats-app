@@ -181,9 +181,6 @@ export default {
     }
 
     this.loading = false
-
-    // this.fetchUserInfo()
-    // this.fetchActivities()
   }
 }
 </script>
