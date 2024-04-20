@@ -19,7 +19,7 @@
         </div>
         <div class="right-panel">
           <div class="points-total">
-            <span class="points"> {{ pointsTotalAllValue }} </span
+            <span class="points"> {{ pointsTotalAll }} </span
             ><span class="month-points">wszystkich</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="activity-icon">
               <path
@@ -28,7 +28,7 @@
             </svg>
           </div>
           <div class="points-selected-month">
-            <span class="points"> {{ pointsTotalMonthValue }} </span>
+            <span class="points"> {{ pointsTotalMonth }} </span>
             <span class="month-points">
               {{ calculateMonthsExt(selectedDate.month) }} {{ selectedDate.year }}</span
             >
@@ -85,10 +85,10 @@ export default {
     return {
       loading: true,
       user: null,
-      allActivities: [], // Przechowuje wszystkie aktywności
-      filteredActivities: [], // Przechowuje przefiltrowane aktywności
-      pointsTotalMonthValue: 0,
-      pointsTotalAllValue: 0,
+      allActivities: [],
+      filteredActivities: [],
+      pointsTotalMonth: 0,
+      pointsTotalAll: 0,
       selectedDate: {
         month: new Date().getMonth(),
         year: new Date().getFullYear()
@@ -96,7 +96,6 @@ export default {
     }
   },
   computed: {
-    // Oblicz sumę punktów dla aktywności z danego miesiąca
     pointsTotalMonth() {
       let pointsToAdd = 0
       return this.filteredActivities.reduce((total, activity) => {
@@ -108,7 +107,6 @@ export default {
         }
       }, 0)
     },
-    // Oblicz sumę punktów dla wszystkich aktywności
     pointsTotalAll() {
       let pointsToAdd = 0
       return this.allActivities.reduce((total, activity) => {
@@ -122,7 +120,6 @@ export default {
     }
   },
   watch: {
-    // Monitoruj zmiany wybranej daty i filtruj aktywności na jej podstawie
     selectedDate(newDate) {
       if (!(newDate instanceof Date)) {
         console.error('Selected date is not a Date object')
