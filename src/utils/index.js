@@ -29,6 +29,7 @@ export const getRewardValue = (distance, type) => {
 
 export const getRewardByTimeValue = (time, type) => {
   if (type === 'Workout') return Math.round((time * 150) / 10000)
+  else if (type === 'WeightTraining') return Math.round((time * 130) / 10000)
 }
 
 export const calculateMonths = (month) => {
